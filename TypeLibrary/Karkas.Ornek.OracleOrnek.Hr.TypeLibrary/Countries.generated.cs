@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -79,6 +80,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string RegionIdAsString
 		{
 			[DebuggerStepThrough]
@@ -101,12 +103,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string CountryId = "COUNTRY_ID";
-		public const string CountryName = "COUNTRY_NAME";
-		public const string RegionId = "REGION_ID";
-	}
 		public Countries ShallowCopy()
 		{
 			Countries obj = new Countries();
@@ -115,59 +111,16 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.regionId = regionId;
 			return obj;
 		}
-	
+		
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
+		{
+		}
+		public class PropertyIsimleri
+		{
+			public const string CountryId = "COUNTRY_ID";
+			public const string CountryName = "COUNTRY_NAME";
+			public const string RegionId = "REGION_ID";
+		}
 
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string CountryId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".CountryId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "CountryId";
-				}
-			}
-		}
-		public static string CountryName
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".CountryName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "CountryName";
-				}
-			}
-		}
-		public static string RegionId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".RegionId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "RegionId";
-				}
-			}
-		}
-	}
-}
 }

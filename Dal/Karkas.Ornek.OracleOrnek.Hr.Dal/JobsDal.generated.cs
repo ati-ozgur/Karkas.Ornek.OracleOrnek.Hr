@@ -71,10 +71,10 @@ public partial class JobsDal : BaseDal<Jobs>
 						(:JOB_ID,:JOB_TITLE,:MIN_SALARY,:MAX_SALARY)";
 		}
 	}
-	public Jobs SorgulaJOB_IDIle(string p1)
+	public Jobs SorgulaJobIdIle(string p1)
 	{
 		List<Jobs> liste = new List<Jobs>();
-		SorguCalistir(liste,String.Format(" JOB_ID = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" JobId = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

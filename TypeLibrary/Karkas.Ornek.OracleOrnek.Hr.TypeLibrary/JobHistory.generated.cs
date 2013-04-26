@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -119,6 +120,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string EmployeeIdAsString
 		{
 			[DebuggerStepThrough]
@@ -143,6 +145,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string StartDateAsString
 		{
 			[DebuggerStepThrough]
@@ -167,6 +170,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string EndDateAsString
 		{
 			[DebuggerStepThrough]
@@ -191,6 +195,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string DepartmentIdAsString
 		{
 			[DebuggerStepThrough]
@@ -213,14 +218,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string EmployeeId = "EMPLOYEE_ID";
-		public const string StartDate = "START_DATE";
-		public const string EndDate = "END_DATE";
-		public const string JobId = "JOB_ID";
-		public const string DepartmentId = "DEPARTMENT_ID";
-	}
 		public JobHistory ShallowCopy()
 		{
 			JobHistory obj = new JobHistory();
@@ -231,91 +228,20 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.departmentId = departmentId;
 			return obj;
 		}
-	
-
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "EndDate"));		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobId"));	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string EmployeeId
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".EmployeeId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "EmployeeId";
-				}
-			}
-		}
-		public static string StartDate
+			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "EndDate"));			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobId"));		}
+		public class PropertyIsimleri
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".StartDate"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "StartDate";
-				}
-			}
+			public const string EmployeeId = "EMPLOYEE_ID";
+			public const string StartDate = "START_DATE";
+			public const string EndDate = "END_DATE";
+			public const string JobId = "JOB_ID";
+			public const string DepartmentId = "DEPARTMENT_ID";
 		}
-		public static string EndDate
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".EndDate"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "EndDate";
-				}
-			}
-		}
-		public static string JobId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".JobId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "JobId";
-				}
-			}
-		}
-		public static string DepartmentId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".DepartmentId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "DepartmentId";
-				}
-			}
-		}
+
 	}
-}
 }

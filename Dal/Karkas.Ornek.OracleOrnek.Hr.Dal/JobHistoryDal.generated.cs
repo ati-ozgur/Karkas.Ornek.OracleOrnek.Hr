@@ -72,10 +72,10 @@ public partial class JobHistoryDal : BaseDal<JobHistory>
 						(:EMPLOYEE_ID,:START_DATE,:END_DATE,:JOB_ID,:DEPARTMENT_ID)";
 		}
 	}
-	public JobHistory SorgulaSTART_DATEIle(DateTime p1)
+	public JobHistory SorgulaStartDateIle(DateTime p1)
 	{
 		List<JobHistory> liste = new List<JobHistory>();
-		SorguCalistir(liste,String.Format(" START_DATE = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" StartDate = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

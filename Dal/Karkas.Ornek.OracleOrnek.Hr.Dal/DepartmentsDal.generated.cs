@@ -71,10 +71,10 @@ public partial class DepartmentsDal : BaseDal<Departments>
 						(:DEPARTMENT_ID,:DEPARTMENT_NAME,:MANAGER_ID,:LOCATION_ID)";
 		}
 	}
-	public Departments SorgulaDEPARTMENT_IDIle(decimal p1)
+	public Departments SorgulaDepartmentIdIle(decimal p1)
 	{
 		List<Departments> liste = new List<Departments>();
-		SorguCalistir(liste,String.Format(" DEPARTMENT_ID = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" DepartmentId = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

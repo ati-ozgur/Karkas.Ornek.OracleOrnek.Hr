@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pCountryId);
 		}
-		public Countries SorgulaCOUNTRY_IDIle(string p1)
+		public Countries SorgulaCountryIdIle(string p1)
 		{
-			return dal.SorgulaCOUNTRY_IDIle(p1);
+			return dal.SorgulaCountryIdIle(p1);
 		}
 	}
 }

@@ -70,10 +70,10 @@ public partial class CountriesDal : BaseDal<Countries>
 						(:COUNTRY_ID,:COUNTRY_NAME,:REGION_ID)";
 		}
 	}
-	public Countries SorgulaCOUNTRY_IDIle(string p1)
+	public Countries SorgulaCountryIdIle(string p1)
 	{
 		List<Countries> liste = new List<Countries>();
-		SorguCalistir(liste,String.Format(" COUNTRY_ID = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" CountryId = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

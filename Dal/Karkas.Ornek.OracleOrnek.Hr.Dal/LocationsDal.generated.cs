@@ -73,10 +73,10 @@ public partial class LocationsDal : BaseDal<Locations>
 						(:LOCATION_ID,:STREET_ADDRESS,:POSTAL_CODE,:CITY,:STATE_PROVINCE,:COUNTRY_ID)";
 		}
 	}
-	public Locations SorgulaLOCATION_IDIle(decimal p1)
+	public Locations SorgulaLocationIdIle(decimal p1)
 	{
 		List<Locations> liste = new List<Locations>();
-		SorguCalistir(liste,String.Format(" LOCATION_ID = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" LocationId = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

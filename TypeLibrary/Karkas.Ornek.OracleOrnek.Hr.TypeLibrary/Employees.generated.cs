@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -259,6 +260,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string EmployeeIdAsString
 		{
 			[DebuggerStepThrough]
@@ -283,6 +285,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string HireDateAsString
 		{
 			[DebuggerStepThrough]
@@ -307,6 +310,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string SalaryAsString
 		{
 			[DebuggerStepThrough]
@@ -331,6 +335,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string CommissionPctAsString
 		{
 			[DebuggerStepThrough]
@@ -355,6 +360,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string ManagerIdAsString
 		{
 			[DebuggerStepThrough]
@@ -379,6 +385,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string DepartmentIdAsString
 		{
 			[DebuggerStepThrough]
@@ -401,21 +408,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string FullName = "FULL_NAME";
-		public const string EmployeeId = "EMPLOYEE_ID";
-		public const string FirstName = "FIRST_NAME";
-		public const string LastName = "LAST_NAME";
-		public const string Email = "EMAIL";
-		public const string PhoneNumber = "PHONE_NUMBER";
-		public const string HireDate = "HIRE_DATE";
-		public const string JobId = "JOB_ID";
-		public const string Salary = "SALARY";
-		public const string CommissionPct = "COMMISSION_PCT";
-		public const string ManagerId = "MANAGER_ID";
-		public const string DepartmentId = "DEPARTMENT_ID";
-	}
 		public Employees ShallowCopy()
 		{
 			Employees obj = new Employees();
@@ -433,198 +425,29 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.departmentId = departmentId;
 			return obj;
 		}
-	
-
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "LastName"));		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Email"));		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "HireDate"));		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobId"));	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string FullName
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".FullName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "FullName";
-				}
-			}
-		}
-		public static string EmployeeId
+			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "LastName"));			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Email"));			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "HireDate"));			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobId"));		}
+		public class PropertyIsimleri
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".EmployeeId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "EmployeeId";
-				}
-			}
+			public const string FullName = "FULL_NAME";
+			public const string EmployeeId = "EMPLOYEE_ID";
+			public const string FirstName = "FIRST_NAME";
+			public const string LastName = "LAST_NAME";
+			public const string Email = "EMAIL";
+			public const string PhoneNumber = "PHONE_NUMBER";
+			public const string HireDate = "HIRE_DATE";
+			public const string JobId = "JOB_ID";
+			public const string Salary = "SALARY";
+			public const string CommissionPct = "COMMISSION_PCT";
+			public const string ManagerId = "MANAGER_ID";
+			public const string DepartmentId = "DEPARTMENT_ID";
 		}
-		public static string FirstName
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".FirstName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "FirstName";
-				}
-			}
-		}
-		public static string LastName
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".LastName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "LastName";
-				}
-			}
-		}
-		public static string Email
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".Email"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "Email";
-				}
-			}
-		}
-		public static string PhoneNumber
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".PhoneNumber"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "PhoneNumber";
-				}
-			}
-		}
-		public static string HireDate
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".HireDate"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "HireDate";
-				}
-			}
-		}
-		public static string JobId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".JobId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "JobId";
-				}
-			}
-		}
-		public static string Salary
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".Salary"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "Salary";
-				}
-			}
-		}
-		public static string CommissionPct
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".CommissionPct"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "CommissionPct";
-				}
-			}
-		}
-		public static string ManagerId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".ManagerId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "ManagerId";
-				}
-			}
-		}
-		public static string DepartmentId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".DepartmentId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "DepartmentId";
-				}
-			}
-		}
+
 	}
-}
 }

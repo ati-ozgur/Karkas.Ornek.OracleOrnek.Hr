@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pDepartmentId);
 		}
-		public Departments SorgulaDEPARTMENT_IDIle(decimal p1)
+		public Departments SorgulaDepartmentIdIle(decimal p1)
 		{
-			return dal.SorgulaDEPARTMENT_IDIle(p1);
+			return dal.SorgulaDepartmentIdIle(p1);
 		}
 	}
 }

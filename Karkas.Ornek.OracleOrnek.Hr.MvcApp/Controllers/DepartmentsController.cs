@@ -25,7 +25,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Details(int id)
         {
-            var model = bs.SorgulaDEPARTMENT_IDIle(id);
+            var model = bs.SorgulaDepartmentIdIle(id);
 
             return View(model);
         }
@@ -63,7 +63,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Edit(int id)
         {
-            var model = bs.SorgulaDEPARTMENT_IDIle(id);
+            var model = bs.SorgulaDepartmentIdIle(id);
 
             return View(model);
 

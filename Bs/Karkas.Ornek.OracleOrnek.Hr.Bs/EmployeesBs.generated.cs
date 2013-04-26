@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pEmployeeId);
 		}
-		public Employees SorgulaEMPLOYEE_IDIle(decimal p1)
+		public Employees SorgulaEmployeeIdIle(decimal p1)
 		{
-			return dal.SorgulaEMPLOYEE_IDIle(p1);
+			return dal.SorgulaEmployeeIdIle(p1);
 		}
 	}
 }

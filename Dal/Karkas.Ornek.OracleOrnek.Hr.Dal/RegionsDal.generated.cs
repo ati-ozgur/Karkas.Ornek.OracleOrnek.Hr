@@ -69,10 +69,10 @@ public partial class RegionsDal : BaseDal<Regions>
 						(:REGION_ID,:REGION_NAME)";
 		}
 	}
-	public Regions SorgulaREGION_IDIle(decimal p1)
+	public Regions SorgulaRegionIdIle(decimal p1)
 	{
 		List<Regions> liste = new List<Regions>();
-		SorguCalistir(liste,String.Format(" REGION_ID = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" RegionId = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

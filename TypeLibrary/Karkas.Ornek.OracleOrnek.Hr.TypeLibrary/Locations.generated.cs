@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -139,6 +140,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string LocationIdAsString
 		{
 			[DebuggerStepThrough]
@@ -161,15 +163,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string LocationId = "LOCATION_ID";
-		public const string StreetAddress = "STREET_ADDRESS";
-		public const string PostalCode = "POSTAL_CODE";
-		public const string City = "CITY";
-		public const string StateProvince = "STATE_PROVINCE";
-		public const string CountryId = "COUNTRY_ID";
-	}
 		public Locations ShallowCopy()
 		{
 			Locations obj = new Locations();
@@ -181,105 +174,20 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.countryId = countryId;
 			return obj;
 		}
-	
-
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "City"));	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string LocationId
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".LocationId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "LocationId";
-				}
-			}
-		}
-		public static string StreetAddress
+			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "City"));		}
+		public class PropertyIsimleri
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".StreetAddress"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "StreetAddress";
-				}
-			}
+			public const string LocationId = "LOCATION_ID";
+			public const string StreetAddress = "STREET_ADDRESS";
+			public const string PostalCode = "POSTAL_CODE";
+			public const string City = "CITY";
+			public const string StateProvince = "STATE_PROVINCE";
+			public const string CountryId = "COUNTRY_ID";
 		}
-		public static string PostalCode
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".PostalCode"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "PostalCode";
-				}
-			}
-		}
-		public static string City
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".City"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "City";
-				}
-			}
-		}
-		public static string StateProvince
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".StateProvince"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "StateProvince";
-				}
-			}
-		}
-		public static string CountryId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".CountryId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "CountryId";
-				}
-			}
-		}
+
 	}
-}
 }

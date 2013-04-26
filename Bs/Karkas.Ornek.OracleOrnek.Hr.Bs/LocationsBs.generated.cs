@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pLocationId);
 		}
-		public Locations SorgulaLOCATION_IDIle(decimal p1)
+		public Locations SorgulaLocationIdIle(decimal p1)
 		{
-			return dal.SorgulaLOCATION_IDIle(p1);
+			return dal.SorgulaLocationIdIle(p1);
 		}
 	}
 }

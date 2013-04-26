@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pRegionId);
 		}
-		public Regions SorgulaREGION_IDIle(decimal p1)
+		public Regions SorgulaRegionIdIle(decimal p1)
 		{
-			return dal.SorgulaREGION_IDIle(p1);
+			return dal.SorgulaRegionIdIle(p1);
 		}
 	}
 }

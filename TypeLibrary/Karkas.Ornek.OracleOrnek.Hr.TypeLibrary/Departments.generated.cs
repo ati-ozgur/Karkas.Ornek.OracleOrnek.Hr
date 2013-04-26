@@ -100,7 +100,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
-        [ScaffoldColumn(false)]
+		[ScaffoldColumn(false)]
 		public string DepartmentIdAsString
 		{
 			[DebuggerStepThrough]
@@ -125,8 +125,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
-        [ScaffoldColumn(false)]
-        public string ManagerIdAsString
+		[ScaffoldColumn(false)]
+		public string ManagerIdAsString
 		{
 			[DebuggerStepThrough]
 			get
@@ -150,8 +150,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
-        [ScaffoldColumn(false)]
-        public string LocationIdAsString
+		[ScaffoldColumn(false)]
+		public string LocationIdAsString
 		{
 			[DebuggerStepThrough]
 			get
@@ -173,13 +173,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string DepartmentId = "DEPARTMENT_ID";
-		public const string DepartmentName = "DEPARTMENT_NAME";
-		public const string ManagerId = "MANAGER_ID";
-		public const string LocationId = "LOCATION_ID";
-	}
 		public Departments ShallowCopy()
 		{
 			Departments obj = new Departments();
@@ -189,75 +182,18 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.locationId = locationId;
 			return obj;
 		}
-	
-
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "DepartmentName"));	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string DepartmentId
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".DepartmentId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "DepartmentId";
-				}
-			}
-		}
-		public static string DepartmentName
+			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "DepartmentName"));		}
+		public class PropertyIsimleri
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".DepartmentName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "DepartmentName";
-				}
-			}
+			public const string DepartmentId = "DEPARTMENT_ID";
+			public const string DepartmentName = "DEPARTMENT_NAME";
+			public const string ManagerId = "MANAGER_ID";
+			public const string LocationId = "LOCATION_ID";
 		}
-		public static string ManagerId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".ManagerId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "ManagerId";
-				}
-			}
-		}
-		public static string LocationId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".LocationId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "LocationId";
-				}
-			}
-		}
+
 	}
-}
 }

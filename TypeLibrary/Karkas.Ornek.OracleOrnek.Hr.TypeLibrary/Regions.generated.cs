@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -59,6 +60,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string RegionIdAsString
 		{
 			[DebuggerStepThrough]
@@ -81,11 +83,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string RegionId = "REGION_ID";
-		public const string RegionName = "REGION_NAME";
-	}
 		public Regions ShallowCopy()
 		{
 			Regions obj = new Regions();
@@ -93,44 +90,15 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.regionName = regionName;
 			return obj;
 		}
-	
+		
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
+		{
+		}
+		public class PropertyIsimleri
+		{
+			public const string RegionId = "REGION_ID";
+			public const string RegionName = "REGION_NAME";
+		}
 
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string RegionId
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".RegionId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "RegionId";
-				}
-			}
-		}
-		public static string RegionName
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".RegionName"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "RegionName";
-				}
-			}
-		}
-	}
-}
 }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -99,6 +100,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string MinSalaryAsString
 		{
 			[DebuggerStepThrough]
@@ -123,6 +125,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+		[ScaffoldColumn(false)]
 		public string MaxSalaryAsString
 		{
 			[DebuggerStepThrough]
@@ -145,13 +148,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
-	public class PropertyIsimleri
-	{
-		public const string JobId = "JOB_ID";
-		public const string JobTitle = "JOB_TITLE";
-		public const string MinSalary = "MIN_SALARY";
-		public const string MaxSalary = "MAX_SALARY";
-	}
 		public Jobs ShallowCopy()
 		{
 			Jobs obj = new Jobs();
@@ -161,75 +157,18 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			obj.maxSalary = maxSalary;
 			return obj;
 		}
-	
-
-	protected override void OnaylamaListesiniOlusturCodeGeneration()
-	{
 		
-		this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobTitle"));	}
-	public static class EtiketIsimleri
-	{
-		const string namespaceVeClass = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr";
-		public static string JobId
+		protected override void OnaylamaListesiniOlusturCodeGeneration()
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".JobId"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "JobId";
-				}
-			}
-		}
-		public static string JobTitle
+			
+			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobTitle"));		}
+		public class PropertyIsimleri
 		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".JobTitle"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "JobTitle";
-				}
-			}
+			public const string JobId = "JOB_ID";
+			public const string JobTitle = "JOB_TITLE";
+			public const string MinSalary = "MIN_SALARY";
+			public const string MaxSalary = "MAX_SALARY";
 		}
-		public static string MinSalary
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".MinSalary"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "MinSalary";
-				}
-			}
-		}
-		public static string MaxSalary
-		{
-			get
-			{
-				string s = ConfigurationManager.AppSettings[namespaceVeClass + ".MaxSalary"];
-				if (s != null)
-				{
-					return s;
-				}
-				else
-				{
-					return "MaxSalary";
-				}
-			}
-		}
+
 	}
-}
 }

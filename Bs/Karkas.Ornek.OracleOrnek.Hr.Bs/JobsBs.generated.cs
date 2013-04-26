@@ -25,9 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			dal.Sil( pJobId);
 		}
-		public Jobs SorgulaJOB_IDIle(string p1)
+		public Jobs SorgulaJobIdIle(string p1)
 		{
-			return dal.SorgulaJOB_IDIle(p1);
+			return dal.SorgulaJobIdIle(p1);
 		}
 	}
 }
