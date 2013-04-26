@@ -19,7 +19,7 @@ public partial class LocationsDal : BaseDal<Locations>
 	{
 		get
 		{
-			return "";
+			return "Karkas.Ornek.OracleOrnek.Hr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Locations pTypeLibrary,long pIdentityKolonValue)

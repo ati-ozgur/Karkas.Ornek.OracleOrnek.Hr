@@ -19,7 +19,7 @@ public partial class CountriesDal : BaseDal<Countries>
 	{
 		get
 		{
-			return "";
+			return "Karkas.Ornek.OracleOrnek.Hr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Countries pTypeLibrary,long pIdentityKolonValue)

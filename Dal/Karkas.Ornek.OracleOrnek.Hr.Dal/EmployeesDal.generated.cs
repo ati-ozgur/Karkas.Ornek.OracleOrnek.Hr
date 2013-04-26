@@ -19,7 +19,7 @@ public partial class EmployeesDal : BaseDal<Employees>
 	{
 		get
 		{
-			return "";
+			return "Karkas.Ornek.OracleOrnek.Hr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Employees pTypeLibrary,long pIdentityKolonValue)
