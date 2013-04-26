@@ -10,12 +10,12 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 {
     public class DepartmentsController : Controller
     {
+        DepartmentsBs bs = new DepartmentsBs();
         //
         // GET: /Departments/
 
         public ActionResult Index()
         {
-            DepartmentsBs bs = new DepartmentsBs();
             var model = bs.SorgulaHepsiniGetir();
             return View(model);
         }
@@ -25,7 +25,9 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            var model = bs.SorgulaDEPARTMENT_IDIle(id);
+
+            return View(model);
         }
 
         //
@@ -44,6 +46,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
         {
             try
             {
+
+
                 // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
@@ -59,7 +63,10 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = bs.SorgulaDEPARTMENT_IDIle(id);
+
+            return View(model);
+
         }
 
         //

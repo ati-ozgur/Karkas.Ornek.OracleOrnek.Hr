@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Karkas.Core.TypeLibrary;
 using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
+using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
@@ -99,6 +100,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
+        [ScaffoldColumn(false)]
 		public string DepartmentIdAsString
 		{
 			[DebuggerStepThrough]
@@ -123,7 +125,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
-		public string ManagerIdAsString
+        [ScaffoldColumn(false)]
+        public string ManagerIdAsString
 		{
 			[DebuggerStepThrough]
 			get
@@ -147,7 +150,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
-		public string LocationIdAsString
+        [ScaffoldColumn(false)]
+        public string LocationIdAsString
 		{
 			[DebuggerStepThrough]
 			get
