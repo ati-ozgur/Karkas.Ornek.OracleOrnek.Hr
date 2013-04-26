@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Ornek.OracleOrnek.Hr.TypeLibrary", "TypeLibrary\Karkas.Ornek.OracleOrnek.Hr.TypeLibrary\Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.csproj", "{3CC6B27F-0FA7-4397-8532-95E7BD9521A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Ornek.OracleOrnek.Hr.Dal", "Dal\Karkas.Ornek.OracleOrnek.Hr.Dal\Karkas.Ornek.OracleOrnek.Hr.Dal.csproj", "{0141577F-FFD4-41F2-9911-996D03C17392}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Ornek.OracleOrnek.Hr.Bs", "Bs\Karkas.Ornek.OracleOrnek.Hr.Bs\Karkas.Ornek.OracleOrnek.Hr.Bs.csproj", "{B406CAF4-D76A-47E3-B6A6-06BAC65F1629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Ornek.OracleOrnek.Hr.MvcApp", "Karkas.Ornek.OracleOrnek.Hr.MvcApp\Karkas.Ornek.OracleOrnek.Hr.MvcApp.csproj", "{E9AAD789-3615-4BA8-9830-0F8034FF2D40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CC6B27F-0FA7-4397-8532-95E7BD9521A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC6B27F-0FA7-4397-8532-95E7BD9521A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC6B27F-0FA7-4397-8532-95E7BD9521A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC6B27F-0FA7-4397-8532-95E7BD9521A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0141577F-FFD4-41F2-9911-996D03C17392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0141577F-FFD4-41F2-9911-996D03C17392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0141577F-FFD4-41F2-9911-996D03C17392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0141577F-FFD4-41F2-9911-996D03C17392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B406CAF4-D76A-47E3-B6A6-06BAC65F1629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B406CAF4-D76A-47E3-B6A6-06BAC65F1629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B406CAF4-D76A-47E3-B6A6-06BAC65F1629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B406CAF4-D76A-47E3-B6A6-06BAC65F1629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AAD789-3615-4BA8-9830-0F8034FF2D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AAD789-3615-4BA8-9830-0F8034FF2D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AAD789-3615-4BA8-9830-0F8034FF2D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AAD789-3615-4BA8-9830-0F8034FF2D40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
