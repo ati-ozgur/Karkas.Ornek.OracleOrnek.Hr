@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="CountriesBs.cs" />
     <Compile Include="CountriesBs.generated.cs" />
     <Compile Include="DepartmentsBs.cs" />
