@@ -311,6 +311,8 @@
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Views\Regions\Index.cshtml" />
     <Content Include="Views\Regions\Details.cshtml" />
+    <Content Include="Views\Regions\Create.cshtml" />
+    <Content Include="Views\Regions\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

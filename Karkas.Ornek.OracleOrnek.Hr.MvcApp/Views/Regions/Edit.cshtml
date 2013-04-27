@@ -1,0 +1,43 @@
+﻿@model Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr.Regions
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Regions</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegionId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegionId)
+            @Html.ValidationMessageFor(model => model.RegionId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegionName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegionName)
+            @Html.ValidationMessageFor(model => model.RegionName)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

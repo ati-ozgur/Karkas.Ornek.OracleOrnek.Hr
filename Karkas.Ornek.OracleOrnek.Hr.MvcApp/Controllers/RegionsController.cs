@@ -34,19 +34,22 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            Regions model = new Regions();
+            return View(model);
         }
 
         //
         // POST: /Regions/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Regions region)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                if (ModelState.IsValid)
+                {
+                    bs.Ekle(region);
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -60,24 +63,27 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = bs.SorgulaRegionIdIle(id);
+            return View(model);
         }
 
         //
         // POST: /Regions/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Regions region)
         {
             try
             {
-                // TODO: Add update logic here
-
+                if (ModelState.IsValid)
+                {
+                    bs.Guncelle(region);
+                }
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(region);
             }
         }
 
@@ -86,25 +92,20 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        //
-        // POST: /Regions/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    bs.Sil(id);
+                }
             }
             catch
             {
-                return View();
+                ViewBag.Message = "Hata olustu";
             }
+
+            return RedirectToAction("Index");
         }
+
     }
 }
