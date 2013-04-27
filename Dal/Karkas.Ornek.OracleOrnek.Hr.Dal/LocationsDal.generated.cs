@@ -76,7 +76,7 @@ public partial class LocationsDal : BaseDal<Locations>
 	public Locations SorgulaLocationIdIle(decimal p1)
 	{
 		List<Locations> liste = new List<Locations>();
-		SorguCalistir(liste,String.Format(" LocationId = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" LOCATION_ID = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

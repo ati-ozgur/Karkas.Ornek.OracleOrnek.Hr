@@ -74,7 +74,7 @@ public partial class DepartmentsDal : BaseDal<Departments>
 	public Departments SorgulaDepartmentIdIle(decimal p1)
 	{
 		List<Departments> liste = new List<Departments>();
-		SorguCalistir(liste,String.Format(" DepartmentId = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" DEPARTMENT_ID = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];

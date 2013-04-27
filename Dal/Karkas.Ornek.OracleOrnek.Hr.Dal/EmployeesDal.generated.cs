@@ -81,7 +81,7 @@ public partial class EmployeesDal : BaseDal<Employees>
 	public Employees SorgulaEmployeeIdIle(decimal p1)
 	{
 		List<Employees> liste = new List<Employees>();
-		SorguCalistir(liste,String.Format(" EmployeeId = '{0}'", p1));		
+		SorguCalistir(liste,String.Format(" EMPLOYEE_ID = '{0}'", p1));		
 		if (liste.Count > 0)
 		{
 			return liste[0];
