@@ -1,0 +1,30 @@
+﻿@model Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr.Regions
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Regions</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RegionId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegionId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RegionName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegionName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.RegionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

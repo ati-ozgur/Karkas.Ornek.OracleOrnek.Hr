@@ -25,7 +25,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.MvcApp.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            var model = bs.SorgulaRegionIdIle(id);
+            return View(model);
         }
 
         //
