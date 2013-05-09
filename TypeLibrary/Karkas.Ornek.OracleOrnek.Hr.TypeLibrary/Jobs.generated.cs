@@ -11,7 +11,6 @@ using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
-
 {
 	[Serializable]
 	[DebuggerDisplay("JobId = {JobId}")]
@@ -22,6 +21,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		private Nullable<decimal> minSalary;
 		private Nullable<decimal> maxSalary;
 
+		[Key]
+		[StringLength(10)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string JobId
 		{
@@ -41,6 +42,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(35)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string JobTitle
 		{

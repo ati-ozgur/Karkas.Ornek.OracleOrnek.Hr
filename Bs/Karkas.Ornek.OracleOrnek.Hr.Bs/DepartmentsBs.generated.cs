@@ -18,7 +18,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.Bs.Hr
 		{
 			get
 			{
-				return "Karkas.Ornek.OracleOrnek.Hr";
+				return "OracleHr";
 			}
 		}
 		public void Sil(decimal pDepartmentId)

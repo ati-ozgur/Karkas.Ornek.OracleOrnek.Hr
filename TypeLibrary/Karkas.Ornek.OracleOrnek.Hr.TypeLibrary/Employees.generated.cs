@@ -11,13 +11,11 @@ using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
-
 {
 	[Serializable]
 	[DebuggerDisplay("EmployeeId = {EmployeeId}JobId = {JobId}ManagerId = {ManagerId}DepartmentId = {DepartmentId}")]
 	public partial class 	Employees: BaseTypeLibrary
 	{
-		private string fullName;
 		private decimal employeeId;
 		private string firstName;
 		private string lastName;
@@ -30,25 +28,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		private Nullable<decimal> managerId;
 		private Nullable<decimal> departmentId;
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		public string FullName
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				return fullName;
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				if ((this.RowState == DataRowState.Unchanged) && (fullName!= value))
-				{
-					this.RowState = DataRowState.Modified;
-				}
-				fullName = value;
-			}
-		}
-
+		[Key]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public decimal EmployeeId
 		{
@@ -68,6 +48,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(20)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string FirstName
 		{
@@ -87,6 +69,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(25)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string LastName
 		{
@@ -106,6 +89,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(25)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Email
 		{
@@ -125,6 +109,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(20)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string PhoneNumber
 		{
@@ -163,6 +149,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(10)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string JobId
 		{
@@ -411,7 +398,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		public Employees ShallowCopy()
 		{
 			Employees obj = new Employees();
-			obj.fullName = fullName;
 			obj.employeeId = employeeId;
 			obj.firstName = firstName;
 			obj.lastName = lastName;
@@ -435,7 +421,6 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "JobId"));		}
 		public class PropertyIsimleri
 		{
-			public const string FullName = "FULL_NAME";
 			public const string EmployeeId = "EMPLOYEE_ID";
 			public const string FirstName = "FIRST_NAME";
 			public const string LastName = "LAST_NAME";

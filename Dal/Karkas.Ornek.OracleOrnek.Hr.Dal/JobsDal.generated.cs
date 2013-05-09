@@ -19,7 +19,7 @@ public partial class JobsDal : BaseDal<Jobs>
 	{
 		get
 		{
-			return "Karkas.Ornek.OracleOrnek.Hr";
+			return "OracleHr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Jobs pTypeLibrary,long pIdentityKolonValue)
@@ -157,7 +157,7 @@ public partial class JobsDal : BaseDal<Jobs>
 	{
 		get
 		{
-			return "System.Data.OracleClient";
+			return "Oracle.DataAccess.Client";
 		}
 	}
 }

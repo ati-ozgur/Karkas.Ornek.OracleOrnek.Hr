@@ -11,7 +11,6 @@ using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
-
 {
 	[Serializable]
 	[DebuggerDisplay("EmployeeId = {EmployeeId}StartDate = {StartDate}JobId = {JobId}DepartmentId = {DepartmentId}")]
@@ -23,6 +22,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		private string jobId;
 		private Nullable<decimal> departmentId;
 
+		[Key]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public decimal EmployeeId
 		{
@@ -42,6 +42,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[Key]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public DateTime StartDate
 		{
@@ -80,6 +81,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(10)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string JobId
 		{

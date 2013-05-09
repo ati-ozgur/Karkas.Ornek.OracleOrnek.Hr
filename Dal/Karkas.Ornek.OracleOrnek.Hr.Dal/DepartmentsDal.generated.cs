@@ -19,7 +19,7 @@ public partial class DepartmentsDal : BaseDal<Departments>
 	{
 		get
 		{
-			return "Karkas.Ornek.OracleOrnek.Hr";
+			return "OracleHr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Departments pTypeLibrary,long pIdentityKolonValue)
@@ -157,7 +157,7 @@ public partial class DepartmentsDal : BaseDal<Departments>
 	{
 		get
 		{
-			return "System.Data.OracleClient";
+			return "Oracle.DataAccess.Client";
 		}
 	}
 }

@@ -11,7 +11,6 @@ using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
-
 {
 	[Serializable]
 	[DebuggerDisplay("DepartmentId = {DepartmentId}ManagerId = {ManagerId}LocationId = {LocationId}")]
@@ -22,6 +21,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		private Nullable<decimal> managerId;
 		private Nullable<decimal> locationId;
 
+		[Key]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public decimal DepartmentId
 		{
@@ -41,6 +41,7 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(30)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string DepartmentName
 		{

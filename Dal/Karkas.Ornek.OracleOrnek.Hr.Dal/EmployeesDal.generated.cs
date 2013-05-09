@@ -19,7 +19,7 @@ public partial class EmployeesDal : BaseDal<Employees>
 	{
 		get
 		{
-			return "Karkas.Ornek.OracleOrnek.Hr";
+			return "OracleHr";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Employees pTypeLibrary,long pIdentityKolonValue)
@@ -36,7 +36,7 @@ public partial class EmployeesDal : BaseDal<Employees>
 	{
 		get 
 		{
-			return @"SELECT FULL_NAME,EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID FROM EMPLOYEES";
+			return @"SELECT EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID FROM EMPLOYEES";
 		}
 	}
 	protected override string DeleteString
@@ -125,38 +125,34 @@ public partial class EmployeesDal : BaseDal<Employees>
 	}
 	protected override void ProcessRow(IDataReader dr, Employees row)
 	{
-		if (!dr.IsDBNull(0))
+		row.EmployeeId = dr.GetDecimal(0);
+		if (!dr.IsDBNull(1))
 		{
-			row.FullName = dr.GetString(0);
+			row.FirstName = dr.GetString(1);
 		}
-		row.EmployeeId = dr.GetDecimal(1);
-		if (!dr.IsDBNull(2))
+		row.LastName = dr.GetString(2);
+		row.Email = dr.GetString(3);
+		if (!dr.IsDBNull(4))
 		{
-			row.FirstName = dr.GetString(2);
+			row.PhoneNumber = dr.GetString(4);
 		}
-		row.LastName = dr.GetString(3);
-		row.Email = dr.GetString(4);
-		if (!dr.IsDBNull(5))
+		row.HireDate = dr.GetDateTime(5);
+		row.JobId = dr.GetString(6);
+		if (!dr.IsDBNull(7))
 		{
-			row.PhoneNumber = dr.GetString(5);
+			row.Salary = dr.GetDecimal(7);
 		}
-		row.HireDate = dr.GetDateTime(6);
-		row.JobId = dr.GetString(7);
 		if (!dr.IsDBNull(8))
 		{
-			row.Salary = dr.GetDecimal(8);
+			row.CommissionPct = dr.GetDecimal(8);
 		}
 		if (!dr.IsDBNull(9))
 		{
-			row.CommissionPct = dr.GetDecimal(9);
+			row.ManagerId = dr.GetDecimal(9);
 		}
 		if (!dr.IsDBNull(10))
 		{
-			row.ManagerId = dr.GetDecimal(10);
-		}
-		if (!dr.IsDBNull(11))
-		{
-			row.DepartmentId = dr.GetDecimal(11);
+			row.DepartmentId = dr.GetDecimal(10);
 		}
 	}
 	protected override void InsertCommandParametersAdd(DbCommand cmd, Employees row)
@@ -201,7 +197,7 @@ public partial class EmployeesDal : BaseDal<Employees>
 	{
 		get
 		{
-			return "System.Data.OracleClient";
+			return "Oracle.DataAccess.Client";
 		}
 	}
 }

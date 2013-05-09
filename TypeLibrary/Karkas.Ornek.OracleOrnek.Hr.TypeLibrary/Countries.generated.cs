@@ -11,7 +11,6 @@ using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
 namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
-
 {
 	[Serializable]
 	[DebuggerDisplay("CountryId = {CountryId}RegionId = {RegionId}")]
@@ -21,6 +20,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 		private string countryName;
 		private Nullable<decimal> regionId;
 
+		[Key]
+		[StringLength(2)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CountryId
 		{
@@ -40,6 +41,8 @@ namespace Karkas.Ornek.OracleOrnek.Hr.TypeLibrary.Hr
 			}
 		}
 
+		[StringLength(40)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CountryName
 		{
